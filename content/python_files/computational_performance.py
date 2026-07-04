@@ -79,7 +79,7 @@ comparison_report = ComparisonReport(
 
 # %%
 summary = comparison_report.metrics.summarize(
-    scoring=["roc_auc", "log_loss", "brier_score", "fit_time", "predict_time"]
+    metric=["roc_auc", "log_loss", "brier_score", "fit_time", "predict_time"]
 )
 summary.frame()
 
