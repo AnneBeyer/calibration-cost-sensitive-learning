@@ -187,7 +187,7 @@ def generate_imbalanced_dataset(true_coef, true_intercept, n_samples=10_000, see
 
     return X, y
 
-
+# %%
 X_exercise, y_exercise = generate_imbalanced_dataset(
     true_coef, true_intercept, n_samples=10_000, seed=1
 )
@@ -868,9 +868,9 @@ float(model.best_threshold_)
 #   threshold of 0.5 can lead to seemingly disappointing classification performance when
 #   evaluating the model using metrics derived from the confusion matrix (accuracy,
 #   precision, recall, F1 score, Matthews correlation coefficient, ...).
-# - Resampling the training set, can improve those metrics but at the cost of breaking
+# - Resampling the training set can improve those metrics, but at the cost of breaking
 #   the calibration of the predicted probabilities.
-# - Instead, we recommend to evaluate and tune the hyper-parameters the models using
+# - Instead, we recommend to evaluate and tune the hyper-parameters of the model using
 #   threshold-independent metrics (such as ROC-AUC, log-loss) and then plot the
 #   thresholded prediction metrics for many choices of the cut-off threshold.
 # - Then, we can use the `TunedThresholdClassifierCV` meta-estimator to find the best
