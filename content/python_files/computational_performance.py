@@ -24,10 +24,10 @@ from sklearn.ensemble import RandomForestClassifier
 from imblearn.ensemble import BalancedRandomForestClassifier
 
 random_forest = tabular_pipeline(
-    RandomForestClassifier(n_estimators=100, n_jobs=-1, random_state=0)
+    RandomForestClassifier(n_estimators=80, n_jobs=-1, random_state=0)
 )
 balanced_random_forest = tabular_pipeline(
-    BalancedRandomForestClassifier(n_estimators=100, n_jobs=-1, random_state=0)
+    BalancedRandomForestClassifier(n_estimators=80, n_jobs=-1, random_state=0)
 )
 
 # %%
@@ -51,17 +51,15 @@ balanced_random_forest_gs = GridSearchCV(
     scoring="neg_log_loss",
 )
 
-# # %%
+# %%
 # from skore import CrossValidationReport
-
-# report_rf = CrossValidationReport(random_forest_gs, X, y)
-# report_brf = CrossValidationReport(balanced_random_forest_gs, X, y)
-
-
-# # %%
 # import joblib
 
+# report_rf = CrossValidationReport(random_forest_gs, X, y)
 # joblib.dump(report_rf, "report_rf.joblib")
+
+# %%
+# report_brf = CrossValidationReport(balanced_random_forest_gs, X, y)
 # joblib.dump(report_brf, "report_brf.joblib")
 
 # %%
